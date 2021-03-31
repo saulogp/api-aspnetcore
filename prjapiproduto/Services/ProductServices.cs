@@ -13,7 +13,7 @@ namespace prjapiproduto.Services
         {
             var product = new MongoClient(settings.ConnectionString);
             var database = product.GetDatabase(settings.DatabaseName);
-            _products = database.GetCollection<Product>(settings.ClienteCollectionName);
+            _products = database.GetCollection<Product>(settings.ProductCollectionName);
         }
 
         public List<Product> Get() => _products.Find(produto => true).ToList();
